@@ -1,0 +1,18 @@
+<% if user_signed_in? %> 
+ <div> Welcome <%= current_user.email %> </div> 
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>
+<h1>Hello This is a page!</h1>
+<h1 class="text-3xl font-bold underline">
+      Hello world!
+</h1>
+
+<div class=”max-w-lg mx-auto mt-16 text-center max-w-sm rounded overflow-hidden shadow-lg p-10">
+
+<h1 class=”mb-4 text-3xl font-black”>Here are all our users!</h1>
+
+<p class=”text-lg leading-snug”>If this looks nice, it means Tailwind is set up properly.</p>
+
+</div>
