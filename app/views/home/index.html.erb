@@ -1,18 +1,21 @@
-<% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
+<%# Navigation %>
+<nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full">
+  <div class="mb-2 sm:mb-0">
+    <a href="#" class="text-2xl font-bold no-underline text-grey-darkest hover:text-blue-dark">Boaty 🚣</a>
+  </div>
+  <div>
+    <% if user_signed_in? %> 
+      <div class="grid grid-cols-2 gap-3"> Welcome <%= current_user.email %> 
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, form_class: "contents", class: "flex-1" %> 
+      </div> 
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path, class:"font-bold py-2 px-2 bg-blue-400 rounded-md text-white" %> 
+    <% end %>
+  </div>
+</nav>
+
 <h1>Hello This is a page!</h1>
-<h1 class="text-3xl font-bold underline">
+<h1 class="font-bold text-4xl text-green-500">
       Hello world!
 </h1>
-
-<div class=”max-w-lg mx-auto mt-16 text-center max-w-sm rounded overflow-hidden shadow-lg p-10">
-
-<h1 class=”mb-4 text-3xl font-black”>Here are all our users!</h1>
-
-<p class=”text-lg leading-snug”>If this looks nice, it means Tailwind is set up properly.</p>
-
 </div>
