@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  location: MyString
+  type: 
+  coxxed: false
+  distance: 1.5
+  available: false
+
+two:
+  name: MyString
+  description: MyText
+  location: MyString
+  type: 
+  coxxed: false
+  distance: 1.5
+  available: false
