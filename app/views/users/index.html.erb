@@ -1,0 +1,33 @@
+
+<div class="p-4 sm:ml-64">
+   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Users</h1>
+  </div>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-70 uppercase bg-gray-50 dark:bg-gray-70 dark:text-gray-40">
+    <tr>
+      <th scope="col" class="px-6 py-3">Name</th>
+      <th scope="col" class="px-6 py-3">Joined</th>
+      <th scope="col" class="px-6 py-3">Total Distance</th>
+      <th scope="col" class="px-6 py-3">Number of outings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+     <tr class="odd:bg-white odd:dark:bg-gray-90 even:bg-gray-50 even:dark:bg-gray-80 border-b dark:border-gray-70">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-90 whitespace-nowrap dark:text-gray-40"><%= user.email %>
+                </th>
+      <td class="px-6 py-4"><%= user.created_at %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</div>
+</div>
