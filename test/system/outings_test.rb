@@ -16,6 +16,7 @@ class OutingsTest < ApplicationSystemTestCase
 
     fill_in "Boat", with: @outing.boat_id
     fill_in "Distance", with: @outing.distance
+    fill_in "Outing Time", with: @outing.outing_time
     fill_in "User", with: @outing.user_id
     click_on "Create Outing"
 
@@ -29,6 +30,7 @@ class OutingsTest < ApplicationSystemTestCase
 
     fill_in "Boat", with: @outing.boat_id
     fill_in "Distance", with: @outing.distance
+    fill_in "Outing Date", with: @outing.outing_time
     fill_in "User", with: @outing.user_id
     click_on "Update Outing"
 

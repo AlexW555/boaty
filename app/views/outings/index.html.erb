@@ -14,10 +14,10 @@
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
     <thead class="text-xs text-gray-70 uppercase bg-gray-50 dark:bg-gray-70 dark:text-gray-40">
     <tr>
-      <th scope="col" class="px-6 py-3">Name</th>
       <th scope="col" class="px-6 py-3">User</th>
       <th scope="col" class="px-6 py-3">Boat</th>
-      <th scope="col" class="px-6 py-3">Distance</th>
+      <th scope="col" class="px-6 py-3">Distance (km)</th>
+       <th scope="col" class="px-6 py-3">Outing Date</th>
       <th scope="col" class="px-6 py-3">Available</th>
       <th scope="col" class="px-6 py-3"></th>
     </tr>
@@ -25,11 +25,10 @@
   <tbody>
     <% @outings.each do |outing| %>
      <tr class="odd:bg-white odd:dark:bg-gray-90 even:bg-gray-50 even:dark:bg-gray-80 border-b dark:border-gray-70">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-90 whitespace-nowrap dark:text-gray-40"><%= outing.updated_at %>
-                </th>
       <td class="px-6 py-4"><%= outing.user.email %></td>
       <td class="px-6 py-4"><%= outing.boat.name %></td>
       <td class="px-6 py-4"><%= outing.distance %></td>
+      <td class="px-6 py-4"><%= outing.outing_time %></td>
       <td class="px-6 py-4">
       <%= link_to outing, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" do %>
         <%=image_tag("view.svg", style: 'height:100%')%>

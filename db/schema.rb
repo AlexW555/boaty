@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_24_233549) do
     t.bigint "boat_id", null: false
     t.bigint "user_id", null: false
     t.float "distance"
+    t.datetime "outing_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["boat_id"], name: "index_outings_on_boat_id"

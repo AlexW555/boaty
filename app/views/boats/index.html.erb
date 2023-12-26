@@ -18,7 +18,7 @@
       <th scope="col" class="px-6 py-3">Name</th>
       <th scope="col" class="px-6 py-3">Location</th>
       <th scope="col" class="px-6 py-3">Type</th>
-      <th scope="col" class="px-6 py-3">Distance</th>
+      <th scope="col" class="px-6 py-3">Distance (km)</th>
       <th scope="col" class="px-6 py-3">Available</th>
       <th scope="col" class="px-6 py-3"></th>
     </tr>
@@ -31,7 +31,7 @@
       <td class="px-6 py-4"><%= boat.location %></td>
       <td class="px-6 py-4"><%= boat.boat_type %></td>
       <td class="px-6 py-4"><%= boat.distance %></td>
-      <td class="px-6 py-4"><%= boat.available %></td>
+      <td class="px-6 py-4"><%= boat.available? %></td>
       <td class="px-6 py-4">
       <%= link_to boat, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" do %>
         <%=image_tag("view.svg", style: 'height:100%')%>

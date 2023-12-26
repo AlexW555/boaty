@@ -17,7 +17,7 @@ class OutingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create outing" do
     assert_difference("Outing.count") do
-      post outings_url, params: { outing: { boat_id: @outing.boat_id, distance: @outing.distance, user_id: @outing.user_id } }
+      post outings_url, params: { outing: { boat_id: @outing.boat_id, distance: @outing.distance, outing_time: @outing.outing_time, user_id: @outing.user_id } }
     end
 
     assert_redirected_to outing_url(Outing.last)
@@ -34,7 +34,7 @@ class OutingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update outing" do
-    patch outing_url(@outing), params: { outing: { boat_id: @outing.boat_id, distance: @outing.distance, user_id: @outing.user_id } }
+    patch outing_url(@outing), params: { outing: { boat_id: @outing.boat_id, distance: @outing.distance, outing_time: @outing.outing_time, user_id: @outing.user_id } }
     assert_redirected_to outing_url(@outing)
   end
 

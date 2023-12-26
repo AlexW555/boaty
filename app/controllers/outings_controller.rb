@@ -71,6 +71,6 @@ class OutingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def outing_params
-      params.require(:outing).permit(:boat_id, :user_id, :distance)
+      params.require(:outing).permit(:boat_id, :user_id, :distance, :outing_time)
     end
 end
