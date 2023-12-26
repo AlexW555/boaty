@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_24_233549) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_26_193832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_24_233549) do
     t.index ["user_id"], name: "index_outings_on_user_id"
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.bigint "boat_id", null: false
+    t.bigint "user_id", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["boat_id"], name: "index_reports_on_boat_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,4 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_24_233549) do
 
   add_foreign_key "outings", "boats"
   add_foreign_key "outings", "users"
+  add_foreign_key "reports", "boats"
+  add_foreign_key "reports", "users"
 end

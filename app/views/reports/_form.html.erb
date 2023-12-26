@@ -1,10 +1,10 @@
-<%= form_with(model: outing, class: "contents") do |form| %>
-  <% if outing.errors.any? %>
+<%= form_with(model: report, class: "contents") do |form| %>
+  <% if report.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(outing.errors.count, "error") %> prohibited this outing from being saved:</h2>
+      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
 
       <ul>
-        <% outing.errors.each do |error| %>
+        <% report.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -22,13 +22,8 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :distance %>
-    <%= form.text_field :distance, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :outing_date %>
-    <%= form.date_field :outing_time, max: Date.today, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">

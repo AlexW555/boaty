@@ -29,13 +29,13 @@
       <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
          <div class="grid grid-cols-2 gap-x-20">
          <div>
-          <%= column_chart Outing.group_by_day_of_week(:created_at, format: "%a",).count, width: "440px", height: "150px" %>
+          <%= column_chart Outing.group_by_day_of_week(:created_at, format: "%a",).count, width: "440px", height: "150px", colors: ['indigo'] %>
           <p class="text-xl text-gray-400 dark:text-gray-500 text-center">
           Most popular day of the week
           </p>
           </div>
           <div>
-          <%= line_chart Outing.group_by_month(:created_at, last: 12, current: true).count, width: "440px", height: "150px" %>
+          <%= line_chart Outing.group_by_month(:created_at, last: 12, current: true).count, width: "440px", height: "150px", colors: ['indigo'] %>
            <p class="text-xl text-gray-400 dark:text-gray-500 text-center">
           Outing History
           </p>
